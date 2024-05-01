@@ -147,7 +147,6 @@ class CancerModel:
     def get_feature_variance(self):
         return self.pca.explained_variance_ratio_
 
-    
     def get_feature_importance_df(self, X):
         feature_importance = self.get_feature_importance()
         feature_variance = self.get_feature_variance()
