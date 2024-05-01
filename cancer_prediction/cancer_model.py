@@ -43,7 +43,7 @@ class CancerModel:
             "pca__n_components": np.arange(1, 31),
             "model__C": np.logspace(-3, 1, 100),
         }
-        
+
         grid = GridSearchCV(pipe, param_grid, cv=5, n_jobs=-1, scoring="accuracy", verbose=1)
         grid.fit(X, y)
 
@@ -147,6 +147,7 @@ class CancerModel:
     def get_feature_variance(self):
         return self.pca.explained_variance_ratio_
 
+    
     def get_feature_importance_df(self, X):
         feature_importance = self.get_feature_importance()
         feature_variance = self.get_feature_variance()
